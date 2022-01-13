@@ -1,0 +1,24 @@
+/* NOTE: You tried making this work but it just doesn't make sense for what you're doing. CSS in JS is way more portable especially for canvas and 3d */
+:root {
+    --trackpad-width: 240;
+    --trackpad-height: 280;
+    --trackpad-position: 'absolute';
+    --trackpad-background: 'rgba(200, 200, 200, 0.3)';
+    --trackpad-padding: 20;
+    --trackpad-padding-bottom: 30;
+    --trackpad-top: 0;
+    --trackpad-z-index: 2;
+    --trackpad-off-display: 'none';
+    --trackpad-on-display: 'block';
+}
+
+.trackpad {
+    width: calc(var(--trackpad-width) * 1px);
+    height: calc(var(--trackpad-height) * 1px);
+    position: var(--trackpad-position);
+    background: var(--trackpad-background);
+    padding: calc(var(--trackpad-padding) * 1px);
+    padding-bottom: calc(var(--trackpad-padding-bottom) * 1px);
+    top: calc(var(--trackpad-top) * 1px);
+    z-index: var(--trackpad-z-index);
+}

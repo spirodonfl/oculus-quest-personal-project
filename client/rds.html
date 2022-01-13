@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>RDS</title>
+
+        <link rel="stylesheet" href="css/all.css" />
+        <link rel="stylesheet" href="css/rds.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.css" />
+    </head>
+    <body>
+        <div id="loading">Loading connections...</div>
+        <div id="message"></div>
+        <div id="action"></div>
+        <!--<div id="log" style="width: 100%; height: 200px; overflow-y: scroll;"></div>-->
+
+        <canvas id="test"></canvas>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/fit/fit.js"></script>
+        <script>var module = {export: function () {}};</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js"></script>
+        <script src="common/xterm-themes.js"></script>
+        <script src="common/connections.js"></script>
+        <script src="canvas-helper.js"></script>
+        <script src="common/settings.js"></script>
+        <script src="common/shortcuts.js"></script>
+        <script src="common/styles.js"></script>
+        <script src="common/pty-settings.js"></script>
+        <script src="common/strings.js"></script>
+        <script src="common/simplepeer.min.js"></script>
+        <script src="common/keycode-map.js"></script>
+        <script src="common/keycode-map-layout.js"></script>
+        <script src="common/functional.js"></script>
+        <script src="common/functional-log.js"></script>
+        <script src="common/functional-error.js"></script>
+        <script src="common/functional-html.js"></script>
+        <script src="common/functional-data.js"></script>
+        <script src="common/functional-events.js"></script>
+        <script src="common/functional-fsm.js"></script>
+        <script src="common/functional-websocket.js"></script>
+        <script src="common/functional-uuid.js"></script>
+        <script src="common/connections.js"></script>
+        <script src="app.js"></script>
+        <script src="rds.js"></script>
+        <script src="ui.html.js"></script>
+        <script src="ui.threedee.js"></script>
+        <script src="ui.canvas.js"></script>
+        <script>window.addEventListener('load', function () {
+            UI.modes.html = true;
+            //UI.modes.canvas = true;
+            UI.load();
+        });</script>
+    </body>
+</html>

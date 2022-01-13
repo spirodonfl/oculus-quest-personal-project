@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Checks</title>
+    </head>
+    <body>
+        <script src="common/connections.js"></script>
+        <script>
+            window.addEventListener('load', function () {
+                var ul = document.createElement('ul');
+                ul.id = 'connections-list';
+
+                for (var name in CONNECTIONS) {
+                    var connection = CONNECTIONS[name];
+                    if (connection.rds) {
+                        var rdsUrl = 'https://' + connection.rds.ip + ':' + connection.rds.port;
+                        var li = document.createElement('li');
+                        li.id = 'connection-' + connection.id;
+                        var a = document.createElement('a');
+                        a.href = rdsUrl;
+                        a.innerText = name + ' RDS';
+                        li.appendChild(a);
+                        ul.appendChild(li);
+                    }
+                    if (connection.pty) {
+                        var ptyUrl = 'https://' + connection.pty.ip + ':' + connection.pty.port;
+                        var li = document.createElement('li');
+                        li.id = 'connection-' + connection.id;
+                        var a = document.createElement('a');
+                        a.href = ptyUrl;
+                        a.innerText = name + ' PTY';
+                        li.appendChild(a);
+                        ul.appendChild(li);
+                    }
+                    if (connection.data) {
+                        var dataUrl = 'https://' + connection.data.ip + ':' + connection.data.port;
+                        var li = document.createElement('li');
+                        li.id = 'connection-' + connection.id;
+                        var a = document.createElement('a');
+                        a.href = dataUrl;
+                        a.innerText = name + ' Data';
+                        li.appendChild(a);
+                        ul.appendChild(li);
+                    }
+                    if (connection.server) {
+                        var serverUrl = 'https://' + connection.server.ip + ':' + connection.server.port;
+                        var li = document.createElement('li');
+                        li.id = 'connection-' + connection.id;
+                        var a = document.createElement('a');
+                        a.href = serverUrl;
+                        a.innerText = name + ' Server';
+                        li.appendChild(a);
+                        ul.appendChild(li);
+                    }
+                }
+
+                document.getElementById('loading').remove();
+                document.body.appendChild(ul);
+            });
+        </script>
+
+        <div id="loading">Loading connections...</div>
+    </body>
+</html>

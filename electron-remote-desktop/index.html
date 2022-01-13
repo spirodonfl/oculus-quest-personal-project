@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Electron Remote Desktop</title>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    </head>
+    <body style="background: white;">
+        <div id="loading">Loading connections...</div>
+        <div id="message"></div>
+        <div id="action"></div>
+
+        <script src="../common/strings.js"></script>
+        <script src="../common/simplepeer.min.js"></script>
+        <script src="../common/functional.js"></script>
+        <script src="../common/functional-log.js"></script>
+        <script src="../common/functional-error.js"></script>
+        <script src="../common/functional-data.js"></script>
+        <script src="../common/functional-events.js"></script>
+        <script src="../common/functional-fsm.js"></script>
+        <script src="../common/functional-websocket.js"></script>
+        <script src="../common/functional-uuid.js"></script>
+        <script src="../common/connections.js"></script>
+        <script src="app.js"></script>
+        <script src="rds.js"></script>
+        <script>window.addEventListener('load', function () { UI.load(); });</script>
+    </body>
+</html>
